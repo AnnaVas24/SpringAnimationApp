@@ -24,12 +24,14 @@ class AnimationViewController: UIViewController {
 
 
     @IBAction func runSpringAnimation(_ sender: SpringButton) {
+        mainLabel.text = animation.description
+        
         springAnimationView.animation = animation.preset
         springAnimationView.curve = animation.curve
         springAnimationView.force = animation.force
         springAnimationView.duration = animation.duration
         springAnimationView.animate()
-        mainLabel.text = animation.description
+        
         
         animation = Animation.getAnimation()
         sender.setTitle("\(animation.preset)", for: .normal)

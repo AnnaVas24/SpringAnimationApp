@@ -10,8 +10,8 @@ import Spring
 struct Animation {
     let preset: String
     let curve: String
-    let force: CGFloat
-    let duration: CGFloat
+    let force: Double
+    let duration: Double
     
     var description: String {
         """
@@ -24,8 +24,8 @@ duration: \(String(format: "%.02f", duration))
     static func getAnimation() -> Animation {
         Animation(preset: Spring.AnimationPreset.allCases.randomElement()?.rawValue ?? "",
                   curve: Spring.AnimationCurve.allCases.randomElement()?.rawValue ?? "",
-                  force: CGFloat.random(in: 1...5),
-                  duration: CGFloat.random(in: 1...5))
+                  force: Double.random(in: 1...5),
+                  duration: Double.random(in: 1...5))
     }
   
 }
